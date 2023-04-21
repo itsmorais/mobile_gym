@@ -34,7 +34,6 @@ export const Nav = styled(Link)`
 `
 
 export const Title = styled.h1`
-  font-style: normal;
   font-weight: 700;
   font-size: 21px;
   line-height: 32px;
