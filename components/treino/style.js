@@ -38,6 +38,7 @@ export const TreinoContainer = styled.div`
   width: 355px;
   height: fit-content;
   padding-bottom: 5%;
+  margin-bottom: 50px;
  
 
  background: rgba(38, 87, 215, 0.25);

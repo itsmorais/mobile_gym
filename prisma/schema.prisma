@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Treino {
+  idTreino Int @id @default(autoincrement())
+  nomeTreino String
+  statusTreino Boolean
+  set1 Int
+  set2 Int
+  set3 Int
+  set4 Int
+  tipoTreino String
+  carga Int
+  usuarios UsuarioTreino[] // 1 Treino pode ser vinculado a vários usuários
+}
+
+model Usuario {
+  idUsuario Int @id @default(autoincrement())
+  nomeUsuario String
+  treinos UsuarioTreino[]
+}
+
+model UsuarioTreino {
+  idUsuario Int
+  idTreino Int
+  usuario Usuario @relation(fields: [idUsuario], references: [idUsuario])
+  treino Treino @relation(fields: [idTreino], references: [idTreino])
+
+  @@id([idUsuario, idTreino])
+}

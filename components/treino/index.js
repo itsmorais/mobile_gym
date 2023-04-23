@@ -5,10 +5,11 @@ import { useState } from "react";
 
 
 
-export default function Treino() {
+export default function TreinoComponent({treino}) {
 
-  const [carga, setCarga] = useState(40);
-  const [status, setStatus] = useState(false)
+
+  const [carga=treino.carga, setCarga] = useState(40);
+  const [status, setStatus] = useState(treino.statusTreino)
 
   const handleIncreaseCarga = function () {
     setCarga(carga + 1)
@@ -20,18 +21,20 @@ export default function Treino() {
 
   const handleDone = function () {
     setStatus(true)
+ 
   }
 
   const handleUndone = function () {
     setStatus(false)
+    
   }
 
 
   return (
     <>
       <TreinoNome>
-        <h3>Supino Plano</h3>
-        {status ? <ImCheckboxChecked size={20} onClick={handleUndone} />
+        <h3>{treino.nomeTreino}</h3>
+        {treino.statusTreino ? <ImCheckboxChecked size={20} onClick={handleUndone} />
           : <ImCheckboxUnchecked size={20} onClick={handleDone} />}
 
 
@@ -41,8 +44,8 @@ export default function Treino() {
       <TreinoContainer>
         <ImageCardContainer></ImageCardContainer>
 
-        <p>Sets: 12-10-8-6</p>
-        <p>Tipo: Progressão de carga</p>
+        <p>Sets: {treino.set1} {treino.set2} {treino.set3} {treino.set4}</p>
+        <p>Tipo: {treino.tipoTreino}</p>
 
 
         <div id="carga">
@@ -56,4 +59,4 @@ export default function Treino() {
   )
 }
 
-module.exports = Treino
+module.exports = TreinoComponent

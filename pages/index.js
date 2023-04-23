@@ -4,10 +4,11 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Header from '../components/header'
 import Title from '../components/title'
-import Treino from '../components/treino'
+import TreinoComponent from '../components/treino'
+import { prisma } from '@/libs/prisma'
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export  default function Home(props) {
   return (
     <>
       <Head>
@@ -21,10 +22,22 @@ export default function Home() {
 
           <Header></Header>
           <Title></Title>
-          <Treino></Treino>
+
+          {props.propsTreino.map((treino)=>(
+            <TreinoComponent key={treino.idTreino} treino={treino}/>
+
+          ))}
 
         </div>
       </main>
     </>
   )
+}
+
+export  async function getStaticProps(){
+  const propsTreino = await prisma.treino.findMany()
+
+  return{
+    props:{propsTreino},
+  }
 }
