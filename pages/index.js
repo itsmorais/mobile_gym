@@ -2,9 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Header from './components/header'
-import Title from './components/title'
-import Treino from './components/treino'
+import Header from '../components/header'
+import Title from '../components/title'
+import Treino from '../components/treino'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
