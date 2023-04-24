@@ -8,7 +8,7 @@ import TreinoComponent from '../components/treino'
 import { prisma } from '@/libs/prisma'
 const inter = Inter({ subsets: ['latin'] })
 
-export  default function Home(props) {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -23,10 +23,12 @@ export  default function Home(props) {
           <Header></Header>
           <Title></Title>
 
-          {props.propsTreino.map((treino)=>(
-            <TreinoComponent key={treino.idTreino} treino={treino}/>
+          {props.propsTreino.map((treino) => (
+            <TreinoComponent key={treino.idTreino} treino={treino} />
 
           ))}
+
+          <footer style={{ marginBottom: "50px" }}></footer>
 
         </div>
       </main>
@@ -34,10 +36,10 @@ export  default function Home(props) {
   )
 }
 
-export  async function getStaticProps(){
+export async function getStaticProps() {
   const propsTreino = await prisma.treino.findMany()
 
-  return{
-    props:{propsTreino},
+  return {
+    props: { propsTreino },
   }
 }

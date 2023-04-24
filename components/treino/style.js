@@ -14,17 +14,17 @@ export const TreinoNome = styled.div`
     width: 50px;
   }
   >h3{
-    width: 150px;
+    width: 250px;
   }
 `
 
 export const ImageCardContainer = styled.div`
   width: 100%;
   height: 150px;
-  background: url("supinoPlano.webp");
   background-size:cover ;
   background-position: center;
   margin: auto;
+  padding: 0 2%;
   border-radius: 4px;
 
   
@@ -35,14 +35,15 @@ export const ImageCardContainer = styled.div`
 `
 
 export const TreinoContainer = styled.div`
-  width: 355px;
+  width: 350px;
   height: fit-content;
-  padding-bottom: 5%;
+  padding-bottom: 2.5%;
   margin-bottom: 50px;
  
 
  background: rgba(38, 87, 215, 0.25);
-  box-shadow: 2px 2px 4px rgba(38, 87, 215, 0.5);
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
   margin: auto;
   position: relative;
