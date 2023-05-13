@@ -21,6 +21,7 @@ model Exercicio {
   tipo_exercicio   String
   carga            Int
   id_treino        Int
+  image_src        String?
   treino           Treino  @relation(fields: [id_treino], references: [id_treino])
   sets             Set[]
 }

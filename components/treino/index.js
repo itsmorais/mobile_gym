@@ -3,71 +3,72 @@ import { RiArrowDownCircleFill, RiArrowUpCircleFill } from 'react-icons/ri'
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { useState } from "react";
 
+export default function TreinoComponent( {exercicio} ) {
+  const [carga, setCarga] = useState(exercicio.carga);
+  const [status, setStatus] = useState(exercicio.status_exercicio);
 
-
-export default function TreinoComponent({ treino }) {
-
-
-  const [carga, setCarga] = useState(treino.carga);
-  const [status, setStatus] = useState(treino.statusTreino)
-
-
-  const handleIncreaseCarga = function () {
-    setCarga(carga + 1)
+  const handleIncreaseCarga = async function () {
+    if (carga < 100) {
+      setCarga(carga + 1);
+      await fetch(`/api/carga?exercicioId=${exercicio.id_exercicio}&carga=${carga+1}`)
+    }
   }
 
-  const handleDecreaseCarga = function () {
-    setCarga(carga - 1)
+  const handleDecreaseCarga = async function () {
+    if (carga > 0) {
+      setCarga(carga - 1);
+      await fetch(`/api/carga?exercicioId=${exercicio.id_exercicio}&carga=${carga-1}`)
+
+    }
   }
 
-  const handleDone = function () {
-    setStatus(true)
+  const handleDone = async function () {
+    setStatus(true);
+    await fetch(`/api/feito?exercicioId=${exercicio.id_exercicio}&status=true`)
+  }
+
+  const handleUndone = async function () {
+    setStatus(false);
+    await fetch(`/api/feito?exercicioId=${exercicio.id_exercicio}&status=false`)
 
   }
 
-  const handleUndone = function () {
-    setStatus(false)
 
-  }
-
+  
 
   return (
     <>
-      <TreinoNome>
-        <h3>{treino.nomeTreino}</h3>
-        {status ? <ImCheckboxChecked size={20} onClick={handleUndone} />
-          : <ImCheckboxUnchecked size={20} onClick={handleDone} />}
+   
+    
+        <div key={exercicio.id_exercicio}>
+          <TreinoNome>
+            <h3>{exercicio.nome_exercicio}</h3>
+            {status
+              ? <ImCheckboxChecked size={20} onClick={handleUndone} />
+              : <ImCheckboxUnchecked size={20} onClick={handleDone} />}
+          </TreinoNome>
 
+          <TreinoContainer>
+            <ImageCardContainer style={{ backgroundImage: `url(${exercicio.image_src})` }}></ImageCardContainer>
 
+            <p>Sets:
+              {exercicio.sets.map(({set_valor})=>' '+set_valor+' ') }
+              </p>
+            <p >Tipo: {exercicio.tipo_exercicio}</p> 
 
-      </TreinoNome>
-
-      <TreinoContainer>
-        <ImageCardContainer style={{ backgroundImage: `url(${treino.idTreino}.webp)` }}></ImageCardContainer>
-
-        <p>Sets:
-          {treino.set1 > 0 && ` ${treino.set1} `} 
-          {treino.set2 > 0 && `${treino.set2} `} 
-          {treino.set3 > 0 && `${treino.set3} `} 
-          {treino.set4 > 0 && `${treino.set4}`}</p>
-        <p>Tipo: {treino.tipoTreino}</p>
-
-
-        { carga > 0 &&  
-        <div id="carga">
-        Carga:
-        <RiArrowUpCircleFill onClick={handleIncreaseCarga} />
-        <p>{carga} Kg</p>
-        <RiArrowDownCircleFill onClick={handleDecreaseCarga} />
-      </div>
-
+            {carga > 0 &&
+              <div id="carga" key={exercicio.id_exercicio}>
+                Carga:
+                <RiArrowUpCircleFill onClick={handleIncreaseCarga} />
+                <p key={exercicio.id_exercicio}>{carga} Kg</p>
+                <RiArrowDownCircleFill onClick={handleDecreaseCarga} />
+              </div>
+            }
+          </TreinoContainer>
+        </div> 
       
-        
-        }
-        
-      </TreinoContainer>
     </>
   )
 }
 
-module.exports = TreinoComponent
+module.exports = TreinoComponent;
