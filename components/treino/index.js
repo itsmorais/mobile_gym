@@ -45,16 +45,26 @@ export default function TreinoComponent({ treino }) {
       <TreinoContainer>
         <ImageCardContainer style={{ backgroundImage: `url(${treino.idTreino}.webp)` }}></ImageCardContainer>
 
-        <p>Sets: {treino.set1} {treino.set2} {treino.set3} {treino.set4}</p>
+        <p>Sets:
+          {treino.set1 > 0 && ` ${treino.set1} `} 
+          {treino.set2 > 0 && `${treino.set2} `} 
+          {treino.set3 > 0 && `${treino.set3} `} 
+          {treino.set4 > 0 && `${treino.set4}`}</p>
         <p>Tipo: {treino.tipoTreino}</p>
 
 
+        { carga > 0 &&  
         <div id="carga">
-          Carga:
-          <RiArrowUpCircleFill onClick={handleIncreaseCarga} />
-          <p>{carga} Kg</p>
-          <RiArrowDownCircleFill onClick={handleDecreaseCarga} />
-        </div>
+        Carga:
+        <RiArrowUpCircleFill onClick={handleIncreaseCarga} />
+        <p>{carga} Kg</p>
+        <RiArrowDownCircleFill onClick={handleDecreaseCarga} />
+      </div>
+
+      
+        
+        }
+        
       </TreinoContainer>
     </>
   )

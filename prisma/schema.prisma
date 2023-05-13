@@ -8,29 +8,26 @@ datasource db {
 }
 
 model Treino {
-  idTreino Int @id @default(autoincrement())
-  nomeTreino String
-  statusTreino Boolean
-  set1 Int
-  set2 Int
-  set3 Int
-  set4 Int
-  tipoTreino String
-  carga Int
-  usuarios UsuarioTreino[] // 1 Treino pode ser vinculado a vários usuários
+  id_treino     Int         @id @default(autoincrement())
+  nome_treino   String
+  status_treino Boolean
+  exercicios    Exercicio[]
 }
 
-model Usuario {
-  idUsuario Int @id @default(autoincrement())
-  nomeUsuario String
-  treinos UsuarioTreino[]
+model Exercicio {
+  id_exercicio     Int     @id @default(autoincrement())
+  nome_exercicio   String
+  status_exercicio Boolean
+  tipo_exercicio   String
+  carga            Int
+  id_treino        Int
+  treino           Treino  @relation(fields: [id_treino], references: [id_treino])
+  sets             Set[]
 }
 
-model UsuarioTreino {
-  idUsuario Int
-  idTreino Int
-  usuario Usuario @relation(fields: [idUsuario], references: [idUsuario])
-  treino Treino @relation(fields: [idTreino], references: [idTreino])
-
-  @@id([idUsuario, idTreino])
+model Set {
+  id_set       Int       @id @default(autoincrement())
+  set_valor    Int
+  id_exercicio Int
+  exercicio    Exercicio @relation(fields: [id_exercicio], references: [id_exercicio])
 }
