@@ -36,7 +36,7 @@ export default function Home({treinos}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const treinos = await prisma.treino.findMany({
     include:{
       exercicios:{
