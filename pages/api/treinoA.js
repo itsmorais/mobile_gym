@@ -1,5 +1,4 @@
-import { prisma } from "@/libs/prisma";
-
+import prisma from "@/libs/prisma";
 export default async function handler(req, res) {
   const treino = await prisma.treino.findUnique({
     where: { id_treino: 1 },

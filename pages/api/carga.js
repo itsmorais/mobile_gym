@@ -1,5 +1,4 @@
-import { prisma } from "@/libs/prisma";
-
+import prisma from "@/libs/prisma";
 export default async function handler(req, res) {
   const {carga,exercicioId} = req.query
   await prisma.exercicio.update({
