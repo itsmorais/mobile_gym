@@ -21,9 +21,9 @@ export default function Home({treinos}) {
 
 
           <Header></Header>
-          <Title></Title>
+          <Title treinoNome={treinos[1].nome_treino}></Title>
 
-          {treinos[0].exercicios.map((exercicio)=>(
+          {treinos[1].exercicios.map((exercicio)=>(
             <TreinoComponent key={exercicio.id_exercicio} exercicio={exercicio}></TreinoComponent>
           ))}
 

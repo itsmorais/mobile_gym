@@ -1,11 +1,11 @@
 import { Titulo } from './style'
 
-export default function Title() {
+export default function Title({treinoNome}) {
   return (
     <>
       <Titulo>
-        Treino A:
-        <span>Peito</span>
+        Treino:
+        <span>{treinoNome}</span>
       </Titulo>
     </>
   )
