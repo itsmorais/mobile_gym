@@ -13,7 +13,7 @@ export const Container = styled.header`
   color:#ffffff;
   margin: 50px auto 0;
 `
-export const Nav = styled(Link)`
+export const Nav = styled.button`
   width: 125px;
   display: flex;
   align-items: center;
@@ -23,6 +23,9 @@ export const Nav = styled(Link)`
   font-weight: 400;
   font-size: 13px;
   line-height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 
   >svg{
     width: 25px;

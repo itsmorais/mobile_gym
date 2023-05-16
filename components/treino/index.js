@@ -3,10 +3,9 @@ import { RiArrowDownCircleFill, RiArrowUpCircleFill } from 'react-icons/ri'
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { useState } from "react";
 
-export default function TreinoComponent( {exercicio} ) {
+export default function TreinoComponent( {exercicio,quantidadeExercicios} ) {
   const [carga, setCarga] = useState(exercicio.carga);
   const [status, setStatus] = useState(exercicio.status_exercicio);
-
   const handleIncreaseCarga = async function () {
     if (carga < 100) {
       setCarga(carga + 1);
@@ -25,6 +24,7 @@ export default function TreinoComponent( {exercicio} ) {
   const handleDone = async function () {
     setStatus(true);
     await fetch(`/api/feito?exercicioId=${exercicio.id_exercicio}&status=true`)
+    await fetch(`api/treinoFeito?treinoId=${exercicio.id_treino}&quantidadeExercicios=${quantidadeExercicios}`)
   }
 
   const handleUndone = async function () {
