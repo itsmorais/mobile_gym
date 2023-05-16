@@ -1,38 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mobile Gym
+Mobile Gym is a web application for mobile that I developed as a personal project to help me keep track of my exercises at the gym. It allows me to record all my exercises, including the name of the exercise, the weight, the sets, and an image of how to do it. All the information is stored in a database, so I can easily access my exercise history and adjust my workout routine as needed.
 
-## Getting Started
+## Technologies Used
+* Prototype: [Figma](https://www.figma.com/file/m9YKk4CQGwqpaBgii8yPsT/mobile_gym?type=design&node-id=0%3A1&t=gBRUreQJRcXYooyt-1)<br>
+* Frontend: JavaScript, Next.js, React, styled-components, Figma
+* Backend: Next.js, Node.js, Prisma ORM, MySQL, AWS (for hosting the database)
+## Features
+- Record all your exercises, including the name, weight, sets, and an image of how to do it
+- Personalize your workout routine by adjusting the weight for each exercise in real time
+- Easily access the instructions for each exercise, including the image
+- Store all your exercise data in a database
 
-First, run the development server:
+## Technical Skills
+Developing Mobile gym allowed me to demonstrate my proficiency in several key technical skills, including:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Database design and management
+RESTful API development
+User interface design and development
+Use of version control tools (Git)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Design
+I designed the user interface for Gym Exercises Tracker myself using Figma. The design includes a clean and modern layout with easy-to-use features that allow for efficient and personalized tracking of workout progress.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Usage
+While Gym Exercises Tracker was originally developed for my personal use, it also serves as a showcase of my technical skills and ability to develop a full-stack web application. I invite you to check out the code and give it a try for yourself.
