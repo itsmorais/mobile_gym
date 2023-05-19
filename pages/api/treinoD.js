@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Mesma carga",
             carga: 20,
-            image_src: "",
+            image_src: "25.webp",
             treino: { connect: { id_treino: treino.id_treino } },
 
             sets: {
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Drop",
             carga: 9,
-            image_src: "",
+            image_src: "26.webp",
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -54,7 +54,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Drop",
             carga: 10,
-            image_src: "",
+            image_src: "27.webp",
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -81,7 +81,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Progressão de carga",
             carga: 20,
-            image_src: "",
+            image_src: "28.webp",
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -104,7 +104,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Core",
             carga: 0,
-            image_src: "",
+            image_src: "29.webp",
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
