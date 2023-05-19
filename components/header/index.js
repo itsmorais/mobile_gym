@@ -4,7 +4,7 @@ export default function Header() {
 
   return (
     <>
-     
+
       <Title>
         <span>Michael </span>
         Treino

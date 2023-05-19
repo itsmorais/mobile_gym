@@ -11,7 +11,7 @@ import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 
-export default function Home({ treinos,proximoTreino }) {
+export default function Home({ treinos, proximoTreino }) {
   const [indexTreino, setindexTreino] = useState(proximoTreino.id_treino - 1)
 
 
@@ -93,17 +93,13 @@ export async function getServerSideProps() {
   });
 
   let proximoTreino = await prisma.treino.findFirst({
-    where:{
-      status_treino:false
+    where: {
+      status_treino: false
     },
-   
+
   })
 
-  
-
-
-
   return {
-    props: { treinos,proximoTreino },
+    props: { treinos, proximoTreino },
   }
 }
