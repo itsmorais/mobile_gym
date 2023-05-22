@@ -69,7 +69,7 @@ export default function Home({ treinos, proximoTreino }) {
           <Title treinoNome={treinos[indexTreino].nome_treino}></Title>
 
           {treinos[indexTreino].exercicios.map((exercicio) => (
-            <TreinoComponent key={exercicio.id_exercicio} exercicio={exercicio} quantidadeExercicios={treinos[0].exercicios.length}></TreinoComponent>
+            <TreinoComponent key={exercicio.id_exercicio} exercicio={exercicio} quantidadeExercicios={treinos[indexTreino].exercicios.length}></TreinoComponent>
           ))}
 
           <footer style={{ marginBottom: "50px" }}></footer>
