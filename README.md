@@ -26,10 +26,10 @@ Mobile Gym is a web application for mobile that I developed as a personal projec
 ## Technical Skills
 Developing Mobile gym allowed me to demonstrate my proficiency in several key technical skills, including:
 
-Database design and management
-RESTful API development
-User interface design and development
-Use of version control tools (Git)
+- Database design and management
+- Restful API development
+- User interface design and development
+- Use of version control tools (Git)
 
 ## Technologies Used
 * Prototype: [Figma](https://www.figma.com/file/m9YKk4CQGwqpaBgii8yPsT/mobile_gym?type=design&node-id=0%3A1&t=gBRUreQJRcXYooyt-1)<br>
@@ -38,11 +38,10 @@ Use of version control tools (Git)
 
 
 ### Design
-I designed the user interface for Gym Exercises Tracker myself using Figma. The design includes a clean and modern layout with easy-to-use features that allow for efficient and personalized tracking of workout progress.
+I designed the user interface using Figma. The design includes a clean and modern layout with easy-to-use features that allow for efficient and personalized tracking of workout progress.
 
 ### Usage
-While Gym Exercises Tracker was originally developed for my personal use, it also serves as a showcase of my technical skills and ability to dev
-elop a full-stack web application. I invite you to check out the code and give it a try for yourself.
+While the app was originally developed for my personal use, it also serves as a showcase of my technical skills and ability to develop a full-stack web application. I invite you to check out the code and give it a try for yourself.
 
 
 
