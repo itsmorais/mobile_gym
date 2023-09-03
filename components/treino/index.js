@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
   const [carga, setCarga] = useState(exercicio.carga);
   const [status, setStatus] = useState(exercicio.status_exercicio);
-  console.log(quantidadeExercicios)
+
   const handleIncreaseCarga = async function () {
     if (carga < 100) {
       setCarga(carga + 1);
