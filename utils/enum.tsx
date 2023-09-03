@@ -17,7 +17,7 @@ export enum exercicio_image_name {
     flexao_de_braco = '16.webp',
     adutor = '17.webp',
     abdutor = '18.webp',
-    mesa_flexora = '19.webp,',
+    mesa_flexora = '19.webp',
     cadeira_extensora = '20.webp',
     agachamento_livre = '21.webp',
     legpress = '22.webp',
