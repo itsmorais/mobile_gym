@@ -1,5 +1,13 @@
 import prisma from "@/libs/prisma";
+import { exercicio_image_name } from "@/utils/enum";
+
 export default async function handler(req, res) {
+    const Cria_Treino = await prisma.treino.create({
+        data: {
+          nome_treino: "Bíceps",
+          status_treino: false,
+        }
+      })
     const treino = await prisma.treino.findUnique({
         where: { id_treino: 4 },
     });
@@ -10,7 +18,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Mesma carga",
             carga: 20,
-            image_src: "25.webp",
+            image_src: exercicio_image_name.rosca_concentrada_w,
             treino: { connect: { id_treino: treino.id_treino } },
 
             sets: {
@@ -32,7 +40,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Drop",
             carga: 9,
-            image_src: "26.webp",
+            image_src: exercicio_image_name.rosca_martelo,
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -54,7 +62,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Drop",
             carga: 10,
-            image_src: "27.webp",
+            image_src: exercicio_image_name.rosca_alternada_halter,
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -81,7 +89,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Progressão de carga",
             carga: 20,
-            image_src: "28.webp",
+            image_src: exercicio_image_name.rosca_invertida,
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -104,7 +112,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Core",
             carga: 0,
-            image_src: "29.webp",
+            image_src: exercicio_image_name.adbominal_full,
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [
@@ -125,7 +133,7 @@ export default async function handler(req, res) {
             nome_exercicio: "Prancha",
             status_exercicio: false,
             tipo_exercicio: "Resistência",
-            image_src: "7.webp",
+            image_src: exercicio_image_name.prancha,
             carga: 0,
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
@@ -149,7 +157,7 @@ export default async function handler(req, res) {
             status_exercicio: false,
             tipo_exercicio: "Cardio",
             carga: 0,
-            image_src: "8.webp",
+            image_src: exercicio_image_name.estreira,
             treino: { connect: { id_treino: treino.id_treino } },
             sets: {
                 create: [

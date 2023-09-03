@@ -1,0 +1,33 @@
+export enum exercicio_image_name {
+    supino_plano = '1.webp',
+    voador = '2.webp',
+    pull_over_halter = '3.webp',
+    frances_triceps = '6.webp',
+    extensao_triceps_corda_polia = '4.webp',
+    coice_biceps_halter = '5.webp',
+    abdominal_infra = '7.webp',
+    prancha = '8.webp',
+    estreira = '9.webp',
+    puxada_frontal = '10.webp',
+    remada = '11.webp',
+    desenvolvimento_halter = '12.webp',
+    levantamento_frontal_halter = '13.webp',
+    levantamento_lateral_halter = '14.webp',
+    hiper_extensor = '15.webp',
+    flexao_de_braco = '16.webp',
+    adutor = '17.webp',
+    abdutor = '18.webp',
+    mesa_flexora = '19.webp,',
+    cadeira_extensora = '20.webp',
+    agachamento_livre = '21.webp',
+    legpress = '22.webp',
+    gemeos_sentado = '23.webp',
+    abdmonial_lateral = '24.webp',
+    rosca_concentrada_w = '25.webp',
+    rosca_martelo = '26.webp',
+    rosca_alternada_halter = '27.webp',
+    rosca_invertida = '28.webp',
+    adbominal_full = '30.webp'
+
+
+}
