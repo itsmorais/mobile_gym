@@ -7,14 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Treino {
-  id_treino     Int         @id @default(autoincrement())
-  nome_treino   String
-  status_treino Boolean
-  exercicios    Exercicio[]
-}
-
-model Exercicio {
+model exercicio {
   id_exercicio     Int     @id @default(autoincrement())
   nome_exercicio   String
   status_exercicio Boolean
@@ -22,13 +15,25 @@ model Exercicio {
   carga            Int
   id_treino        Int
   image_src        String?
-  treino           Treino  @relation(fields: [id_treino], references: [id_treino])
-  sets             Set[]
+  index_exercicio  Int?
+  treino           treino  @relation(fields: [id_treino], references: [id_treino], map: "Exercicio_id_treino_fkey")
+  set              set[]
+
+  @@index([id_treino], map: "Exercicio_id_treino_fkey")
 }
 
-model Set {
+model set {
   id_set       Int       @id @default(autoincrement())
   set_valor    Int
   id_exercicio Int
-  exercicio    Exercicio @relation(fields: [id_exercicio], references: [id_exercicio])
+  exercicio    exercicio @relation(fields: [id_exercicio], references: [id_exercicio], map: "Set_id_exercicio_fkey")
+
+  @@index([id_exercicio], map: "Set_id_exercicio_fkey")
+}
+
+model treino {
+  id_treino     Int         @id @default(autoincrement())
+  nome_treino   String
+  status_treino Boolean
+  exercicio     exercicio[]
 }

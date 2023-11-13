@@ -68,8 +68,8 @@ export default function Home({ treinos, proximoTreino }) {
 
           <Title treinoNome={treinos[indexTreino].nome_treino}></Title>
 
-          {treinos[indexTreino].exercicios.map((exercicio) => (
-            <TreinoComponent key={exercicio.id_exercicio} exercicio={exercicio} quantidadeExercicios={treinos[indexTreino].exercicios.length}></TreinoComponent>
+          {treinos[indexTreino].exercicio.map((exercicio_elem) => (
+            <TreinoComponent key={exercicio_elem.id_exercicio} exercicio={exercicio_elem} quantidadeExercicios={treinos[indexTreino].exercicio.length}></TreinoComponent>
           ))}
 
           <footer style={{ marginBottom: "50px" }}></footer>
@@ -83,9 +83,12 @@ export default function Home({ treinos, proximoTreino }) {
 export async function getServerSideProps() {
   let treinos = await prisma.treino.findMany({
     include: {
-      exercicios: {
+      exercicio: {
         include: {
-          sets: true
+          set: true
+        },
+        orderBy: {
+          index_exercicio: 'asc'
         }
       }
 

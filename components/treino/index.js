@@ -53,7 +53,7 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
           <ImageCardContainer style={{ backgroundImage: `url(${exercicio.image_src})` }}></ImageCardContainer>
 
           <p>Sets:
-            {exercicio.sets.map(({ set_valor }) => ' ' + set_valor + ' ')}
+            {exercicio.set.map(({ set_valor }) => ' ' + set_valor + ' ')}
           </p>
           <p >Tipo: {exercicio.tipo_exercicio}</p>
 
