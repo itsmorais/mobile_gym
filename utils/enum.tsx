@@ -27,7 +27,11 @@ export enum exercicio_image_name {
     rosca_martelo = '26.webp',
     rosca_alternada_halter = '27.webp',
     rosca_invertida = '28.webp',
-    adbominal_full = '30.webp'
+    adbominal_full = '30.webp',
+    remada_halter = '31.webp',
+    voador_invertido = '32.webp',
+    remada_alta = '33.webp'
+
 
 
 }
