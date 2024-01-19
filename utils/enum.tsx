@@ -30,7 +30,13 @@ export enum exercicio_image_name {
     adbominal_full = '30.webp',
     remada_halter = '31.webp',
     voador_invertido = '32.webp',
-    remada_alta = '33.webp'
+    remada_alta = '33.webp',
+    supino_vertical = '34.webp',
+    supino_articulado = '35.webp',
+    crucifixo_plano = '36.webp',
+    frances_unilateral = '37.jpg',
+    remada_cavalinho_maquina = '38.jpg',
+    desenvolvimento_ombro = '38.webp'
 
 
 

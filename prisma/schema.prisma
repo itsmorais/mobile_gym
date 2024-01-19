@@ -35,5 +35,12 @@ model treino {
   id_treino     Int         @id @default(autoincrement())
   nome_treino   String
   status_treino Boolean
+  id_usuario    Int?
   exercicio     exercicio[]
+}
+
+model usuario {
+  id_usuario   Int     @id @default(autoincrement())
+  nome_usuario String? @db.VarChar(50)
+  senha        String? @db.VarChar(50)
 }

@@ -11,7 +11,7 @@ import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 
-export default function Home({ treinos, proximoTreino }) {
+export default function Home({ treinos, proximoTreino, usuario }) {
   const [indexTreino, setindexTreino] = useState(proximoTreino.id_treino - 1)
 
 
@@ -62,7 +62,7 @@ export default function Home({ treinos, proximoTreino }) {
 
           </Container >
 
-          <Header></Header>
+          <Header userName={usuario.nome_usuario}></Header>
 
 
 
@@ -80,8 +80,20 @@ export default function Home({ treinos, proximoTreino }) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const { query } = context;
+  const idUsuario = Number(query.id_usuario);
+
+  let usuario = await prisma.usuario.findUnique({
+    where: {
+      id_usuario: idUsuario
+    }
+  })
+
   let treinos = await prisma.treino.findMany({
+    where: {
+      id_usuario: idUsuario
+    },
     include: {
       exercicio: {
         include: {
@@ -103,6 +115,6 @@ export async function getServerSideProps() {
   })
 
   return {
-    props: { treinos, proximoTreino },
+    props: { treinos, proximoTreino, usuario },
   }
 }
