@@ -25,8 +25,9 @@ export default async function handler(req, res) {
 
         const QuantidadeTreinosToDo = await prisma.treino.count({
             where: {
+                id_treino: { lte: 5 },
                 status_treino: false
-            }
+            },
 
         })
 
