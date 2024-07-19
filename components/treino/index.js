@@ -1,6 +1,8 @@
+"use client"
 import { TreinoNome, TreinoContainer, ImageCardContainer } from "./style";
 import { RiArrowDownCircleFill, RiArrowUpCircleFill } from 'react-icons/ri'
 import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
+import { exercicio_image_name } from "../../utils/enum";
 import { useState } from "react";
 
 export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
@@ -10,27 +12,27 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
   const handleIncreaseCarga = async function () {
     if (carga < 100) {
       setCarga(carga + 1);
-      await fetch(`/api/carga?exercicioId=${exercicio.id_exercicio}&carga=${carga + 1}`)
+      await fetch(`/api/carga?exercicioId=${exercicio._id}&carga=${carga + 1}`)
     }
   }
 
   const handleDecreaseCarga = async function () {
     if (carga > 0) {
       setCarga(carga - 1);
-      await fetch(`/api/carga?exercicioId=${exercicio.id_exercicio}&carga=${carga - 1}`)
+      await fetch(`/api/carga?exercicioId=${exercicio._id}&carga=${carga - 1}`)
 
     }
   }
 
   const handleDone = async function () {
     setStatus(true);
-    await fetch(`/api/feito?exercicioId=${exercicio.id_exercicio}&status=true`)
-    await fetch(`api/treinoFeito?treinoId=${exercicio.id_treino}&quantidadeExercicios=${quantidadeExercicios}`)
+    await fetch(`/api/feito?exercicioId=${exercicio._id}&status=true`)
+    await fetch(`api/treinoFeito?treinoId=${exercicio._id}&quantidadeExercicios=${quantidadeExercicios}`)
   }
 
   const handleUndone = async function () {
     setStatus(false);
-    await fetch(`/api/feito?exercicioId=${exercicio.id_exercicio}&status=false`)
+    await fetch(`/api/feito?exercicioId=${exercicio._id}&status=false`)
 
   }
 
@@ -41,7 +43,7 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
     <>
 
 
-      <div key={exercicio.id_exercicio}>
+      <div key={exercicio._id}>
         <TreinoNome>
           <h3>{exercicio.nome_exercicio}</h3>
           {status
@@ -50,18 +52,18 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
         </TreinoNome>
 
         <TreinoContainer>
-          <ImageCardContainer style={{ backgroundImage: `url(${exercicio.image_src})` }}></ImageCardContainer>
+          <ImageCardContainer style={{ backgroundImage: `url(${exercicio_image_name[exercicio.image_src]})` }}></ImageCardContainer>
 
           <p>Sets:
-            {exercicio.set.map(({ set_valor }) => ' ' + set_valor + ' ')}
+            {exercicio.set.map((valor) => ' ' + valor + ' ')}
           </p>
           <p >Tipo: {exercicio.tipo_exercicio}</p>
 
           {carga > 0 &&
-            <div id="carga" key={exercicio.id_exercicio}>
+            <div id="carga" key={exercicio.carga}>
               Carga:
               <RiArrowUpCircleFill onClick={handleIncreaseCarga} />
-              <p key={exercicio.id_exercicio}>{carga} Kg</p>
+              <p key={exercicio.carga}>{carga} Kg</p>
               <RiArrowDownCircleFill onClick={handleDecreaseCarga} />
             </div>
           }
