@@ -1,7 +1,10 @@
 export enum exercicio_image_name {
     supino_plano = '1.webp',
     voador = '2.webp',
+    crossover = '39.webp',
     pull_over_halter = '3.webp',
+    frances_polia = '40.jpg',
+    supino_inclinado = '41.webp',
     frances_triceps = '6.webp',
     extensao_triceps_corda_polia = '4.webp',
     coice_biceps_halter = '5.webp',
