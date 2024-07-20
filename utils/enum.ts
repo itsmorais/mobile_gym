@@ -39,7 +39,9 @@ export enum exercicio_image_name {
     crucifixo_plano = '36.webp',
     frances_unilateral = '37.jpg',
     remada_cavalinho_maquina = '38.jpg',
-    desenvolvimento_ombro = '38.webp'
+    desenvolvimento_ombro = '38.webp',
+    abdominal_canoa = '41.jpg',
+    afundo_smith = '42.webp',
 
 
 
