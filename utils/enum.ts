@@ -7,7 +7,7 @@ export enum exercicio_image_name {
     coice_biceps_halter = '5.webp',
     abdominal_infra = '7.webp',
     prancha = '8.webp',
-    estreira = '9.webp',
+    esteira = '9.webp',
     puxada_frontal = '10.webp',
     remada = '11.webp',
     desenvolvimento_halter = '12.webp',
