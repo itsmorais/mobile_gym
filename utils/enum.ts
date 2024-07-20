@@ -42,7 +42,5 @@ export enum exercicio_image_name {
     desenvolvimento_ombro = '38.webp',
     abdominal_canoa = '41.jpg',
     afundo_smith = '42.webp',
-
-
-
+    encolhimento_ombro = '43.webp'
 }
