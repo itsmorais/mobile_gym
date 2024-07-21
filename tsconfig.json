@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/api/feito.ja"  ],
+, "pages/api/feito.ja", "pages/api/treinoFeito.js"  ],
   "exclude": [
     "node_modules"
   ]

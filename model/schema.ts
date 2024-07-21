@@ -4,6 +4,7 @@ import { exercicio_image_name } from "../utils/enum";
 
 export interface Treino {
   _id:string
+  idTreino:number
   nome_treino: string,
   status_treino: boolean,
   Exercicios: Exercicio[]
@@ -32,6 +33,7 @@ export const ExercicioSchema = new Schema<Exercicio>({
 
 export const TreinoSchema = new Schema<Treino>({
   nome_treino: { type: String, required: true },
+  idTreino:{type:Number, required:true},
   status_treino: { type: Boolean },
   Exercicios: { type: [ExercicioSchema] }
 })

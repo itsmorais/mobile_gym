@@ -5,7 +5,7 @@ import { ImCheckboxUnchecked, ImCheckboxChecked } from 'react-icons/im'
 import { exercicio_image_name } from "../../utils/enum";
 import { useState } from "react";
 
-export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
+export default function TreinoComponent({ exercicio, quantidadeExercicios,idTreino }) {
   const [carga, setCarga] = useState(exercicio.carga);
   const [status, setStatus] = useState(exercicio.status_exercicio);
 
@@ -27,7 +27,7 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios }) {
   const handleDone = async function () {
     setStatus(true);
     await fetch(`/api/feito?exercicioId=${exercicio._id}&status=true`)
-    await fetch(`api/treinoFeito?treinoId=${exercicio._id}&quantidadeExercicios=${quantidadeExercicios}`)
+    await fetch(`/api/treinoFeito?treinoId=${idTreino}&quantidadeExercicios=${quantidadeExercicios}`)
   }
 
   const handleUndone = async function () {
