@@ -1,15 +1,23 @@
 import connectDB from './api/lib/connect'
 import TreinoModel from '../model/schema'
 import Head from 'next/head'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from '../components/header'
 import { Container } from '../components/header/style'
 import { Nav } from '../components/header/style'
 import Title from '../components/title/'
 import TreinoComponent from '../components/treino'
+import { signIn, signOut, useSession } from 'next-auth/react';
+import Router from 'next/router'
 
 export default function Home({ treinos,proximoTreino}) {
   const [indexTreino, setIndexTreino] = useState(proximoTreino-1);
+  const [user,setUser] = useState("User");
+
+  const { data: session } = useSession();
+
+
+  
 
 
 
@@ -28,6 +36,15 @@ export default function Home({ treinos,proximoTreino}) {
       alert("Não há mais treinos");
     }
   }
+
+  useEffect(() => {
+    if(!session){
+      Router.push("/signIn")
+    }
+    else{
+      setUser(session.user.name);
+    }
+  },[session])
 
   return (
     <>
@@ -52,7 +69,7 @@ export default function Home({ treinos,proximoTreino}) {
         </Nav>
       </Container >
 
-      <Header userName="Michael"></Header>
+      <Header userName={user}></Header>
       <Title treinoNome={treinos[indexTreino].nome_treino}></Title>
       {treinos[indexTreino].Exercicios.map((exercicio_elem) => (
         <TreinoComponent key={exercicio_elem._id} exercicio={exercicio_elem} quantidadeExercicios={treinos[indexTreino].Exercicios.length} idTreino={treinos[indexTreino]._id}></TreinoComponent>

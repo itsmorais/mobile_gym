@@ -65,6 +65,7 @@ export const TreinoContainer = styled.div`
     font-size: 21px;
     line-height: 32px;
     margin: 5% 0 0 5%;
+    gap: 5%;
 
     background: transparent;
  
