@@ -57,19 +57,17 @@ export default function Home({ treinos, proximoTreino }) {
             <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
               <path d="M14 1L1.5 13.5L14 26" stroke="white" />
             </svg>
-            <p>Voltar</p>
           </Nav>
+        <Title treinoNome={treinos[indexTreino].nome_treino}></Title>
           <Nav onClick={handleIndexTreino}>
-            <p>Próximo</p>
             <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
               <path d="M1 26L13.5 13.5L1 1" stroke="white" />
             </svg>
           </Nav>
         </Container >
-        <Title treinoNome={treinos[indexTreino].nome_treino}></Title>
       </div>
 
-      <div style={{"paddingTop":200}}>
+      <div style={{"paddingTop":130}}>
         {treinos[indexTreino].Exercicios.map((exercicio_elem) => (
           <TreinoComponent key={exercicio_elem._id} exercicio={exercicio_elem} quantidadeExercicios={treinos[indexTreino].Exercicios.length} idTreino={treinos[indexTreino]._id}></TreinoComponent>
         ))}

@@ -13,13 +13,14 @@ margin-top:1rem;
     #logout{
     width: fit-content;
     padding: 0 10px 0 10px;
-    font-size:0.9rem;
+    font-size:1.2rem;
     border-radius: 4px;
     font-weight: italic;
     color: #fff;
     cursor:pointer;
     background-color: #2657d7;
     border:none;
+    font-size: 1rem;
 
     }
     #userName{
@@ -29,6 +30,8 @@ margin-top:1rem;
       background-color: transparent;
       cursor:pointer;
       color:#2657d7;
+      font-size: 1.2rem;
+
 
     }
 
@@ -36,7 +39,7 @@ margin-top:1rem;
 
 export const Container = styled.header`
   width: 100%;
-  height: 30px;
+  height: fit-content;
   overflow-y: hidden;
   display: flex;
   align-items: center;
@@ -44,10 +47,9 @@ export const Container = styled.header`
   
 
   color:#ffffff;
-  margin: 30px auto 0;
+  margin: 20px auto 0;
 `
 export const Nav = styled.button`
-  width: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
