@@ -1,16 +1,14 @@
 import styled from 'styled-components'
 
 export const Logout = styled.div`
+margin-top:1rem;
   display: flex;
-  justify-content: flex-end;
-  gap:5%;
+  justify-content: space-around;
+  gap: 5rem;
   align-items: center;
   color:white;
-  width: 90vw;
+  width: 100vw;
   text-align: center;
-  position: absolute;
-  top:2%;
-  right:5%;
 
     #logout{
     width: fit-content;
@@ -46,7 +44,7 @@ export const Container = styled.header`
   
 
   color:#ffffff;
-  margin: 60px auto 0;
+  margin: 30px auto 0;
 `
 export const Nav = styled.button`
   width: 125px;

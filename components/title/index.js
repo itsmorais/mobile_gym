@@ -11,4 +11,3 @@ export default function Title({treinoNome}) {
   )
 }
 
-module.exports = Title

@@ -1,25 +1,24 @@
-import { Container, Nav, Title } from "./style"
-import { useRouter } from "next/router"
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { Logout } from "./style";
+import Image from "next/image";
 export default function Header({ userName }) {
-  const { data: session } = useSession();
 
   return (
 
-    <>
-      <Logout>
-        <p id="userName">
-          <span>Olá, </span>{userName}
-        </p>
-        <button id="logout" onClick={() => signOut()}>Logout</button>
-      </Logout>
+    <Logout>
+      <div className="flex items-center gap-2.5">
+        <Image src={"/cpfit.png"} width={42} height={42} />
 
-    </>
+        <p id="userName">
+          <span>Bem vindo(a), </span>{userName}
+        </p>
+      </div>
+      <button id="logout" onClick={() => signOut()}>Sair</button>
+    </Logout>
+
 
 
 
   )
 }
 
-module.exports = Header

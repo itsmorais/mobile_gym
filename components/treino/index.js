@@ -74,4 +74,3 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios,idTrei
   )
 }
 
-module.exports = TreinoComponent;
