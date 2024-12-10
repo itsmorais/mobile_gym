@@ -3,24 +3,28 @@ import styled from "styled-components";
 export const TreinoNome = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  background-color: transparent;
+  gap: 1rem;
 
   font-weight: 700;
-  font-size: 21px;
-  line-height: 32px;
-  margin:  5% 7.5% 2.5%;
+  font-size: 1.5rem;
+  margin: 2% 0 0 5%;
+
 
   >svg{
-    width: 50px;
+    background-color: transparent;
+
   }
   >h3{
-    width: 250px;
+    width:fit-content;
+    background-color: transparent;
+
   }
 `
 
 export const ImageCardContainer = styled.div`
   width: 100%;
-  height: 150px;
+  height: 12rem;
   background-size:cover ;
   background-position: center;
   margin: auto;
@@ -35,36 +39,45 @@ export const ImageCardContainer = styled.div`
 `
 
 export const TreinoContainer = styled.div`
-  width: 350px;
+  width: 21rem;
   height: fit-content;
-  padding-bottom: 2.5%;
-  margin-bottom: 50px;
+  padding-bottom: 0.5rem;
+  overflow-y: hidden;
+ 
  
 
  background: rgba(38, 87, 215, 0.25);
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
-  margin: auto;
+  margin: 1rem auto;
   position: relative;
 
   >p{
-  font-weight: 400;
-  font-size: 21px;
+  font-weight: 700;
+  font-size: 1.3rem;
   line-height: 32px;
 
   background: transparent;
-  margin: 5% 0 0 5%;
+  margin: 2% 0 0 5%;
+
+  >span{
+    background: transparent;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #DDDDDD;
+    
+  }
   }
 
   >#carga{
    display: flex;
    width: 80%;
    align-items: center;
-   font-weight: 400;
-    font-size: 21px;
+   font-weight: 700;
+   font-size: 1.3rem;
     line-height: 32px;
-    margin: 5% 0 0 5%;
+    margin: 2% 0 0 5%;
     gap: 5%;
 
     background: transparent;
@@ -72,6 +85,13 @@ export const TreinoContainer = styled.div`
     >p{
       background: transparent;
       text-align: center;
+      >span{
+    background: transparent;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #DDDDDD;
+    
+  }
     }
 
    >svg{

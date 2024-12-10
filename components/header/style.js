@@ -4,7 +4,6 @@ export const Logout = styled.div`
 margin-top:1rem;
   display: flex;
   justify-content: space-around;
-  gap: 5rem;
   align-items: center;
   color:white;
   width: 100vw;
