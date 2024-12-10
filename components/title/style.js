@@ -6,7 +6,7 @@ export const Titulo = styled.h1`
   line-height: 51px;
   text-align: justify;
   >span{
-    color: #2657D7;
+    color: var(--primary-color);
   }
 
 `

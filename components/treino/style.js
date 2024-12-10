@@ -46,7 +46,7 @@ export const TreinoContainer = styled.div`
  
  
 
- background: rgba(38, 87, 215, 0.25);
+ background: var(--card-background);
  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
@@ -65,7 +65,7 @@ export const TreinoContainer = styled.div`
     background: transparent;
     font-weight: 400;
     font-size: 1.2rem;
-    color: #DDDDDD;
+    color: var(--text-color);
     
   }
   }
@@ -89,7 +89,7 @@ export const TreinoContainer = styled.div`
     background: transparent;
     font-weight: 400;
     font-size: 1.2rem;
-    color: #DDDDDD;
+    color: var(--text-color);
     
   }
     }

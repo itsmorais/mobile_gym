@@ -5,30 +5,28 @@ margin-top:1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color:white;
   width: 100vw;
   text-align: center;
 
     #logout{
     width: fit-content;
     padding: 0 10px 0 10px;
-    font-size:1.2rem;
+    font-size:1rem;
     border-radius: 4px;
     font-weight: italic;
-    color: #fff;
+    color: var(--text-color);
     cursor:pointer;
-    background-color: #2657d7;
+    background-color: var(--button-warn);
     border:none;
     font-size: 1rem;
 
     }
     #userName{
       width: fit-content;
-      color: white;
+      color:var(--primary-color);
       font-weight: bold;
       background-color: transparent;
       cursor:pointer;
-      color:#2657d7;
       font-size: 1.2rem;
 
 
