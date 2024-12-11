@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Router from 'next/router';
+import { toast } from "react-toastify";
 
 
 export default function SignIn() {
@@ -11,6 +12,8 @@ export default function SignIn() {
 
 
   const handleSubmit = async () => {
+    const loadingToastId = toast.loading("Logging in...");
+
     try {
       const res = await fetch("/api/register", {
         method: "POST",
@@ -27,14 +30,26 @@ export default function SignIn() {
       const data = await res.json();
 
       if (!res.ok) {
-        alert(data.error || "Registration failed!");
+        toast.update(loadingToastId, {
+          render: `Erro ao cadastrar`,
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+
+        });
       } else {
-        alert("Usuário cadastrado com sucesso!");
+        // MENSAGEM DE SUCESSO
+        toast.update(loadingToastId, {
+          render: "Usuário cadastrado com sucesso!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
         Router.push("/signIn");
       }
     } catch (error) {
       alert("An error occurred during registration");
-      console.log(error,"ERRO DURANTE REGISTRO")
+      console.log(error, "ERRO DURANTE REGISTRO")
     }
   };
 

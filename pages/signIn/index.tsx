@@ -1,6 +1,8 @@
 // src/Components/Login.js
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Router from 'next/router';
@@ -19,21 +21,51 @@ export default function SignIn(){
 
 
   const handleSubmit = async () => {
-    console.log(email,pass)
-    const res = await signIn("credentials", {
-      email,
-      password:pass,
-      redirect: false,
-    });
-    if (res?.error) {
-      console.log(res.error as string);
+    // Show loading toast
+    const loadingToastId = toast.loading("Logging in...");
+  
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password: pass,
+        redirect: false,
+      });
+  
+      if (res?.error) {
+        console.log(res)
+        // Update toast with error message
+        toast.update(loadingToastId, {
+          render: "Email ou senha incorretos",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+          
+        });
+        return;
+      }
+  
+      if (res?.ok) {
+        // Update toast with success message
+        toast.update(loadingToastId, {
+          render: "Login successful!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
+        // Redirect after a short delay to show the toast
+        setTimeout(() => Router.push("/"), 1500);
+      }
+    } catch (err) {
+      // Handle unexpected errors
+      toast.update(loadingToastId, {
+        render: "Um erro inesperado aconteceu.",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+      });
     }
-    if (res?.ok) {
-
-      console.log(res)
-      return Router.push("/");
-    }
-};
+  };
+  
 
 
 
