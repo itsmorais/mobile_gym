@@ -15,7 +15,7 @@ export default function Header({ userName }) {
         </p>
       </div>
       <button id="logout" onClick={() => signOut()}>Sair</button>
-        <ThemeToggle />
+          <ThemeToggle />
     </Logout>
 
 

@@ -55,13 +55,13 @@ export default function Home({ treinos, proximoTreino }) {
         <Container>
           <Nav onClick={handleBack}>
             <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
-              <path d="M14 1L1.5 13.5L14 26" stroke="white" />
+              <path d="M14 1L1.5 13.5L14 26" stroke="var(--text-color)"/>
             </svg>
           </Nav>
         <Title treinoNome={treinos[indexTreino].nome_treino}></Title>
           <Nav onClick={handleIndexTreino}>
             <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
-              <path d="M1 26L13.5 13.5L1 1" stroke="white" />
+              <path d="M1 26L13.5 13.5L1 1" stroke="var(--text-color)"/>
             </svg>
           </Nav>
         </Container >
