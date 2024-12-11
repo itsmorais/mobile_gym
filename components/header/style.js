@@ -29,6 +29,8 @@ export const Logout = styled.div`
   background-color: transparent;
   cursor:pointer;
   font-size: 1.2rem;
+  white-space: nowrap;
+
 
 }
 

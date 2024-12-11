@@ -39,7 +39,7 @@ export const ImageCardContainer = styled.div`
 `
 
 export const TreinoContainer = styled.div`
-  width: 21rem;
+  width: 92%;
   height: fit-content;
   padding-bottom: 0.5rem;
   overflow-y: hidden;
