@@ -45,8 +45,8 @@
 }
 
 .dark-theme {
-  --background-color: #0b0b45;
+  --background-color: #201C1C;
   --text-color: #ffffff;
   --primary-color: #2657D7;
-  --card-background: #1c1c1c;
+  --card-background: rgba(38, 87, 215, 0.25);
 }

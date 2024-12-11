@@ -1,5 +1,6 @@
 import { signOut, useSession } from 'next-auth/react';
 import { Logout } from "./style";
+import ThemeToggle from '../toggle/index'
 import Image from "next/image";
 export default function Header({ userName }) {
 
@@ -14,6 +15,7 @@ export default function Header({ userName }) {
         </p>
       </div>
       <button id="logout" onClick={() => signOut()}>Sair</button>
+        <ThemeToggle />
     </Logout>
 
 
