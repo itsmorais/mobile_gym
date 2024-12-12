@@ -44,6 +44,9 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios,idTrei
 
 
       <div key={exercicio._id}>
+
+        <TreinoContainer>
+          <ImageCardContainer style={{ backgroundImage: `url(${exercicio_image_name[exercicio.image_src]})` }}></ImageCardContainer>
         <TreinoNome>
           <h3>{exercicio.nome_exercicio}</h3>
           {status
@@ -51,19 +54,16 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios,idTrei
             : <ImCheckboxUnchecked size={20} onClick={handleDone} />}
         </TreinoNome>
 
-        <TreinoContainer>
-          <ImageCardContainer style={{ backgroundImage: `url(${exercicio_image_name[exercicio.image_src]})` }}></ImageCardContainer>
-
           <p>Sets:
-            {exercicio.set.map((valor) => ' ' + valor + ' ')}
+            <span>{exercicio.set.map((valor) => ' ' + valor + ' ')}</span>
           </p>
-          <p >Tipo: {exercicio.tipo_exercicio}</p>
+          <p >Tipo: <span>{exercicio.tipo_exercicio}</span></p>
 
           {carga > 0 &&
             <div id="carga" key={exercicio.carga}>
               Carga:
               <RiArrowUpCircleFill onClick={handleIncreaseCarga} />
-              <p key={exercicio.carga}>{carga} Kg</p>
+              <p key={exercicio.carga}><span>{carga} Kg</span></p>
               <RiArrowDownCircleFill onClick={handleDecreaseCarga} />
             </div>
           }
@@ -74,4 +74,3 @@ export default function TreinoComponent({ exercicio, quantidadeExercicios,idTrei
   )
 }
 
-module.exports = TreinoComponent;

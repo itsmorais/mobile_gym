@@ -1,12 +1,13 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema,Types,Document } from "mongoose";
 import { exercicio_image_name } from "../utils/enum";
 
 
-export interface Treino {
+export interface Treino extends Document{
   _id:string
   idTreino:number
   nome_treino: string,
   status_treino: boolean,
+  user: Types.ObjectId;
   Exercicios: Exercicio[]
 }
 
@@ -33,9 +34,11 @@ export const ExercicioSchema = new Schema<Exercicio>({
 
 export const TreinoSchema = new Schema<Treino>({
   nome_treino: { type: String, required: true },
-  idTreino:{type:Number, required:true},
+  idTreino: { type: Number, required: true },
   status_treino: { type: Boolean },
-  Exercicios: { type: [ExercicioSchema] }
-})
+  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  Exercicios: { type: [ExercicioSchema], required: true },
+});
+
 
 export default mongoose.models.Treino || mongoose.model('Treino', TreinoSchema);
