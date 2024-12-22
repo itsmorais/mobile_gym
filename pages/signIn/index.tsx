@@ -53,7 +53,7 @@ export default function SignIn(){
           autoClose: 3000,
         });
         // Redirect after a short delay to show the toast
-        setTimeout(() => Router.push("/"), 1500);
+        setTimeout(() => Router.push("/admin"), 1500);
       }
     } catch (err) {
       // Handle unexpected errors

@@ -67,7 +67,7 @@ export default function Home({ treinos, proximoTreino }) {
         </Container >
       </div>
 
-      <div style={{"paddingTop":130}}>
+      <div style={{"paddingTop":130 ,"!overflowY":'scroll'}}>
         {treinos[indexTreino].Exercicios.map((exercicio_elem) => (
           <TreinoComponent key={exercicio_elem._id} exercicio={exercicio_elem} quantidadeExercicios={treinos[indexTreino].Exercicios.length} idTreino={treinos[indexTreino]._id}></TreinoComponent>
         ))}
